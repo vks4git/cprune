@@ -1,0 +1,60 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.1.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: b55e2cc1b69c8b88b7403899a430ffda319d599799d828b0eff678729474926a
+
+name:           cpruner
+version:        0.1.0.0
+synopsis:       Computational biology toolkit to collaborate with researchers in constructive protein engineering
+description:    Please see the README on GitHub at <https://github.com/less-wrong/cobot#readme>
+category:       Bio
+homepage:       https://github.com/less-wrong/cobot#readme
+bug-reports:    https://github.com/less-wrong/cobot/issues
+author:         Pavel Yakovlev, Bogdan Neterebskii
+maintainer:     pavel@yakovlev.me
+copyright:      2018—2019, Less Wrong Bio
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/less-wrong/cobot
+
+library
+  exposed-modules:
+      CodePruner
+  other-modules:
+      Paths_cpruner
+  hs-source-dirs:
+      src
+  default-extensions: AllowAmbiguousTypes ConstraintKinds DeriveFoldable DeriveFunctor DeriveGeneric DeriveTraversable FlexibleContexts FlexibleInstances GeneralizedNewtypeDeriving MultiWayIf RankNTypes RecordWildCards ScopedTypeVariables TypeApplications TypeFamilies TypeSynonymInstances UndecidableInstances
+  build-depends:
+      base >=4.7 && <5
+    , directory
+    , filepath
+    , strict
+  default-language: Haskell2010
+
+executable cprune
+  main-is: Main.hs
+  other-modules:
+      Paths_cpruner
+  hs-source-dirs:
+      app
+  default-extensions: AllowAmbiguousTypes ConstraintKinds DeriveFoldable DeriveFunctor DeriveGeneric DeriveTraversable FlexibleContexts FlexibleInstances GeneralizedNewtypeDeriving MultiWayIf RankNTypes RecordWildCards ScopedTypeVariables TypeApplications TypeFamilies TypeSynonymInstances UndecidableInstances
+  ghc-options: -O3
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , cpruner
+    , directory
+    , filepath
+    , strict
+  default-language: Haskell2010

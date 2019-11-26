@@ -1,0 +1,52 @@
+name:                cpruner 
+version:             0.1.0.0
+github:              "less-wrong/cobot"
+license:             BSD3
+author:              "Pavel Yakovlev, Bogdan Neterebskii"
+maintainer:          "pavel@yakovlev.me"
+copyright:           "2018—2019, Less Wrong Bio"
+category:            Bio
+synopsis:            Computational biology toolkit to collaborate with researchers in constructive protein engineering
+description:         Please see the README on GitHub at <https://github.com/less-wrong/cobot#readme>
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+default-extensions:
+- AllowAmbiguousTypes
+- ConstraintKinds
+- DeriveFoldable
+- DeriveFunctor
+- DeriveGeneric
+- DeriveTraversable
+- FlexibleContexts
+- FlexibleInstances
+- GeneralizedNewtypeDeriving
+- MultiWayIf
+- RankNTypes
+- RecordWildCards
+- ScopedTypeVariables
+- TypeApplications
+- TypeFamilies
+- TypeSynonymInstances
+- UndecidableInstances
+
+dependencies:
+- base >= 4.7 && < 5
+- directory
+- filepath
+- strict
+
+library:
+  source-dirs: src
+
+executables:
+  cprune:
+    source-dirs: app
+    main: Main.hs
+    dependencies:
+    - cpruner
+    - containers 
+    - strict
+    ghc-options: -O3
